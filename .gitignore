@@ -1,0 +1,7 @@
+*.pth
+*.wav
+*.pkl
+.ipynb_checkpoints/
+__pycache__/
+instant_model_parameter/
+contempolary_images/

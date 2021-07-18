@@ -1,0 +1,8 @@
+mel_emotion_classifier_biwavenet_nchin80_prefilter3_res_in16_hidden8_out16_nchhidden32_nchout4_wavenetln5_fsize3_reduce2_cnnnum3_epoch192.pth filter=lfs diff=lfs merge=lfs -text
+mel_emotion_classifier_CNN_layer_num3_nch64_epoch273.pth filter=lfs diff=lfs merge=lfs -text
+mel_emotion_classifier_layer_num4_nch64_epoch78.pth filter=lfs diff=lfs merge=lfs -text
+waveglow_official.pth filter=lfs diff=lfs merge=lfs -text
+audio_emorec_fs22050_bilstm_nch32_cnnnums3_reduce8_prefilter3_lstmin16_lstmnum5_epoch174.pth filter=lfs diff=lfs merge=lfs -text
+audio_emorec_fs22050_uniwavenet_nchin1_prefilter3_res_in16_hidden4_out8_nchhidden16_nchout4_wavenetln20_fsize3_reduce8_cnnnum3_input32768_epoch279.pth filter=lfs diff=lfs merge=lfs -text
+cgen_celebA_unrolled5_ndim512_lbd_consisreg0.1_epoch250.pth filter=lfs diff=lfs merge=lfs -text
+mel_emorec_fs22050_bilstm_nch64_cnnnums1_reduce2_prefilter3_lstmin32_lstmnum5_epoch279.pth filter=lfs diff=lfs merge=lfs -text
