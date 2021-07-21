@@ -77,8 +77,31 @@ def mel_normalize_torch(data, data_type="LJSpeech", axis=None):
     return min_max_normalize_torch(data, min, max, axis=axis)
 
 def image_from_output(output):
+    """
+    convert torch.Tensor into PIL image
+
+    ------------
+    Parameters
+    ------------
+
+    output : torch.Tensor, shape=(sample_num, channel, length, width)
+        either cuda or cpu tensor
+        
+    ------------
+    Returns
+    ------------
+
+    image_list : list
+        list includes PIL images
+
+    ------------
+
+    """
+    if len(output.shape)==3:
+        output = output.unsqueeze(0)
+        
     image_list = []
-    output = output.detach().to("cpu").numpy()
+    output = cuda2numpy(output)
     for i in range(output.shape[0]):
         a = output[i]
         a = np.tile(np.transpose(a, axes=(1,2,0)), (1,1,int(3/a.shape[0])))

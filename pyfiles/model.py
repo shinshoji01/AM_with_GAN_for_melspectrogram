@@ -24,6 +24,27 @@ class GlobalAvgPool(nn.Module):
     def forward(self, x):
         return x.mean(dim=(2,3), keepdim=True)
     
+def random_crop(array, target=160):
+    length = array.shape[1]
+    if length > target:
+        start = np.random.randint(length - target)
+        new_array = min_max(array[:, start:start+target], mean0=False)
+    return new_array
+
+class RandomCrop(nn.Module):
+    def __init__(self):
+        super(RandomCrop, self).__init__()
+
+    def forward(self, x):
+        return random_crop(x)
+    
+class ToPIL(nn.Module):
+    def __init__(self):
+        super(ToPIL, self).__init__()
+
+    def forward(self, x):
+        return image_from_output(torch.tensor(x).unsqueeze(0))[0]
+    
 class ConvolutionalBlock(nn.Module):
     
     def __init__(self, nch_in, nch_out, kernel, pooling="max", activation="ReLU"):
