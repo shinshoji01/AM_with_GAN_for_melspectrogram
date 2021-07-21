@@ -39,11 +39,31 @@ class RandomCrop(nn.Module):
         return random_crop(x)
     
 class ToPIL(nn.Module):
+    """
+    convert torch.Tensor into PIL image
+
+    ------------
+    Parameters
+    ------------
+
+    img : torch.Tensor, shape=(sample_num, channel, length, width)
+        either cuda or cpu tensor
+        
+    ------------
+    Returns
+    ------------
+
+    image_list : PIL image
+        PIL image of the input tensor
+
+    ------------
+
+    """
     def __init__(self):
         super(ToPIL, self).__init__()
 
-    def forward(self, x):
-        return image_from_output(torch.tensor(x).unsqueeze(0))[0]
+    def forward(self, img):
+        return image_from_output(torch.tensor(img).unsqueeze(0))[0]
     
 class ConvolutionalBlock(nn.Module):
     

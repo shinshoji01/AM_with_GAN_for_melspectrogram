@@ -10,10 +10,51 @@ import torchvision.transforms as transforms
 import torch.nn as nn
 
 def cuda2numpy(x):
+    """
+    convert cuda(cpu) tensor into ndarray
+
+    ------------
+    Parameters
+    ------------
+
+    x : torch.Tensor
+        either cuda or cpu tensor
+
+    ------------
+    Returns
+    ------------
+
+    y : ndarray
+        numpy version of the input tensor
+
+    ------------
+
+    """
     return x.detach().to("cpu").numpy()
 
 def cuda2cpu(x):
+    """
+    convert cuda tensor into cpu tensor
+
+    ------------
+    Parameters
+    ------------
+
+    x : torch.Tensor
+        cuda tensor
+
+    ------------
+    Returns
+    ------------
+
+    y : torch.Tensor
+        cpu tensor
+
+    ------------
+
+    """
     return x.detach().to("cpu")
+
 
 def my_round(x, deg):
     return round(x * 10**deg)/10**deg
