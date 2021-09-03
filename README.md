@@ -1,4 +1,4 @@
-# Activation_Maximization
+# Activation Maximization with a Prior in Speech Data
 
 This repository is to introduce some applications for [class-based Activation Maximization(AM)](https://arxiv.org/pdf/1312.6034.pdf) in audio domain, which was published at [American Journal of Computer and Technology](http://www.ajcst.org/article/303/10.11648.j.ajcst.20210403.13).
 
